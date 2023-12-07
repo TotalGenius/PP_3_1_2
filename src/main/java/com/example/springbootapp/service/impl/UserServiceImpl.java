@@ -4,6 +4,7 @@ import com.example.springbootapp.entity.User;
 import com.example.springbootapp.repository.UserRepository;
 import com.example.springbootapp.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,16 +27,19 @@ public class UserServiceImpl implements UserService {
         return userRepository.getAll();
     }
 
+    @Transactional
     @Override
     public void save(User user) {
         userRepository.save(user);
     }
 
+    @Transactional
     @Override
     public void update(User user) {
         userRepository.update(user);
     }
 
+    @Transactional
     @Override
     public void delete(Long id) {
         userRepository.delete(id);

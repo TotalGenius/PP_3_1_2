@@ -11,7 +11,6 @@ import java.util.List;
 
 
 @Repository
-@Transactional
 public class UserRepositoryImpl implements UserRepository {
     @PersistenceContext
     private EntityManager entityManager;
